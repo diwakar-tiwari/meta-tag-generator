@@ -46,7 +46,7 @@ const MetaTagGenerator = () => {
             <label className='grid col-span-2'>
               Page Title:
               <input 
-                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-blue-600'
                 type="text" 
                 name="title" 
                 value={formData.title} 
@@ -58,7 +58,7 @@ const MetaTagGenerator = () => {
             <label className='grid grid-cols-1'>
               Description:
               <textarea 
-              className='block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+              className='block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-blue-600'
                 name="description" 
                 value={formData.description} 
                 onChange={handleChange} 
@@ -69,7 +69,7 @@ const MetaTagGenerator = () => {
             <label className='grid grid-cols-1'>
               Keywords:
               <textarea 
-                className='block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                className='block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-blue-600'
                 type="text" 
                 name="keywords" 
                 value={formData.keywords} 
@@ -81,7 +81,7 @@ const MetaTagGenerator = () => {
             <label className='grid col-span-2'>
               Author (optional):
               <input 
-                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-blue-600'
                 type="text" 
                 name="author" 
                 value={formData.author} 
@@ -92,13 +92,14 @@ const MetaTagGenerator = () => {
             <button type="submit" className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm max-w-44 sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>Generate Meta Tags</button>
           </form>
         </div>
-        {metaTags && (
-          <div>
+    
+          <div className='pt-7'>
             <h3>Generated Meta Tags:</h3>
-            <pre>{metaTags}</pre>
-            <button onClick={copyToClipboard}>Copy to Clipboard</button>
+            <textarea name="" id="" value={metaTags} className='bg-gray-300 rounded-lg border border-gray-300 w-full h-44 outline-blue-600'/>
+            {/* <pre>{metaTags}</pre> */}
+            <button onClick={copyToClipboard} className='bg-yellow-600 rounded-lg text-md p-2 hover:bg-yellow-700 text-white'>Copy to Clipboard</button>
           </div>
-        )}
+        
       </div>
     );
 };
